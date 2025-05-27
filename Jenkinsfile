@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage("Permissions") {
+            steps {
+                sh 'chmod +x ./gradlew'
+            }
+        }
         stage("Compile") {
             steps {
                 sh "./gradlew compileJava"
